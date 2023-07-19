@@ -1,0 +1,27 @@
+<!--extend the base template-->
+{% extends "base.html"%}
+{% block title %}Grant Permission{% endblock %}
+{% block content %}
+<body>
+<form method="POST">
+    <h3 allign = "center">Welcome</h3>
+    <div class="wrapper">
+    <div class="clearfix">
+        <div class = "row">
+            <div class ="col-md-6">
+                <label>
+                    Type email of booking agent
+                </label>
+                <input type = "text" class = "form=group" name="email" data-live-search="true" id="email" class="form-control" title="Type booking agent name"/>
+            </div>
+        </div>
+            
+        <button type="submit" class="button">Submit</button>
+    </div>
+
+
+
+</body>
+
+
+{%endblock%}

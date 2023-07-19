@@ -1,0 +1,62 @@
+<!--extend the base template-->
+{% extends "base.html"%}
+{% block title %}Track My Spending{% endblock %}
+{% block content %} 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- chart.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"
+     integrity="sha512-VCHVc5miKoln972iJPvkQrUYYq7XpxXzvqNfiul1H4aZDwGBGC0lq373KNleaB2LpnC2a/iNfE5zoRYmB4TRDQ==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css"/>
+
+
+</head>
+
+<body>
+    <form method = 'POST'>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            {%if session['name']%}
+            <p> {{session['name']}} have spent {{total_price}} in the past {{time}}.</p>
+            {%elif session['booking_agent_id']%}
+            <p> ID {{session['booking_agent_id']}} have a commission of {{total_price}} in the past {{time}}.</p>
+            <p> You have sold {{count}} tickets and have the average commission of {{average}} </p>
+            {%endif%}
+           
+        </div>
+
+    </div>
+    <div class = "col-md-2">
+        <input type="text" name="From" id="From" class="form-control" placeholder="From Date"/>
+    </div>
+    <div class = "col-md-2">
+        <input type="text" name="to" id="to" class="form-control" placeholder="To Date"/>
+    </div> 
+    <button type="submit" class="button">Set Range</button>
+
+    {% if session['action']=='customer'%}
+    <img src = {{bar_chart}} />
+    {%endif%}
+</body>
+</form>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+<script>
+$(document).ready(function(){
+    $.datepicker.setDefaults({
+        dateFormat: 'yy-mm-dd'
+    });
+    $(function(){
+        $("#From").datepicker();
+        $("#to").datepicker();
+    });
+});
+</script>
+</html>
+
+{% endblock %}
+<!--overwrite with the second{}-->

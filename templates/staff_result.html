@@ -1,0 +1,28 @@
+{%extends 'base.html' %}
+
+{%block content%}
+<br/>
+<form method = "POST">
+<div>
+    <table class="table">
+        <tr class="table__header">
+        {% for header in heading %}
+        <th class = "table__cell">{{header}}</th>
+        {%endfor%}
+        </tr class="table__row">
+        {% for row in values %}
+            {% for cell in row %}
+            <td class = "table__cell">{{cell}} </td>
+            {%endfor%}
+        </tr>
+        {%endfor%}
+
+    </table>
+</div>
+<div>
+    <button type="submit" name="submit" class="button" value = "set_range">Set Range</button> 
+    <button type="submit" name="submit" class="button" value = "view_customers_of_flights">View customers of flights</button> 
+</div>
+</form>
+
+{%endblock%}

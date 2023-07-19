@@ -1,0 +1,31 @@
+{%extends 'base.html' %}
+
+{%block content%}
+<br/>
+<head>
+    <meta http-quiv="X-UA=Compatible" content = "ie=edge">
+</head>
+<div>
+    <form method = "POST">
+    <table class="table">
+        <tr class="table__header">
+        {% for header in heading %}
+        <th class = "table__cell">{{header}}</th>
+        {%endfor%}
+        <th class = "table__cell">Check Customers</th>
+        </tr class="table__row">
+        {% for row in values %}
+            
+            <td class = "table__cell">{{row}} </td>
+        
+            <td class = "table__cell">
+            <input type = "checkbox" name ="checkbox" id = "checkbox" value = "{{row}}"/>
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+    <input type ="submit"/>
+    </form>
+</div>
+
+{%endblock%}

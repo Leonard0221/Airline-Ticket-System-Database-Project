@@ -1,0 +1,20 @@
+<!--extend the base template-->
+<!--can use python language in squiggly bracket -->
+{% extends "base.html"%}
+{% block title %}ADD AIRPORT{% endblock %}
+{% block content %} <form method="POST">
+    <h3 allign = "center">Login</h3>
+    <div class = "form-group">
+        <label for="airport_name">Airport Name</label>
+        <input type="text" class="form-control" id="airport_name" name="airport_name" placeholder="Enter airport name "/>
+    </div>
+    <div class = "form-group">
+        <label for="airport_city">Airport City</label>
+        <input type="text" class="form-control" id="airport_city" name="airport_city" placeholder="Enter airport city"/>
+    </div>
+    <br/>
+    <button type="submit" class="btn btn-primary">Change</button>
+</form>
+
+{% endblock %}
+<!--overwrite with the second{}-->

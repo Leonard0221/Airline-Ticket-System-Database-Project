@@ -1,0 +1,42 @@
+<!--extend the base template-->
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+  <head>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2>
+          Login As:
+        </h2>
+      </div>
+    </div>
+  </head>
+  <body>
+  <div class="container">
+    <div class="row mt-5">
+      <form method="POST">
+        <div class="col-sm">
+          <button type="submit" name="submit" class="btn btn-secondary btn-block" style = "margin-top:20px" value="login_as_customer"> customer
+          </button>
+        </div>
+        <br>
+        <br>
+        <div class="col-sm">
+          <button type="submit" name="submit" class="btn btn-secondary btn-block" style = "margin-top:20px" value="login_as_booking_agent"> booking
+            agent
+          </button>
+        </div>
+        <br>
+        <br>
+        <div class="col-sm">
+          <button type="submit" name="submit" class="btn btn-secondary btn-block" style = "margin-top:20px" value="login_as_airline_staff"> airline
+            staff
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  </body>
+
+{% endblock %}
+<!--overwrite with the second{}-->

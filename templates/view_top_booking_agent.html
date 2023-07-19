@@ -1,0 +1,45 @@
+{%extends 'base.html' %}
+
+{%block content%}
+<br/>
+<div>
+    <table class="table">
+        <tr class="table__header">
+        {% for header in heading1 %}
+        <th class = "table__cell">{{header}}</th>
+        {%endfor%}
+        </tr class="table__row">
+        {% for row in list_1 %}
+            <td class = "table__cell">{{row}} </td>
+        </tr>
+        {%endfor%}
+
+    </table>
+    <table class="table">
+        <tr class="table__header">
+        {% for header in heading2 %}
+        <th class = "table__cell">{{header}}</th>
+        {%endfor%}
+        </tr class="table__row">
+        {% for row in list_2 %}
+            <td class = "table__cell">{{row}} </td>
+        </tr>
+        {%endfor%}
+
+    </table>
+    <table class="table">
+        <tr class="table__header">
+        {% for header in heading3 %}
+        <th class = "table__cell">{{header}}</th>
+        {%endfor%}
+        </tr class="table__row">
+        {% for row in list_3 %}
+            <td class = "table__cell">{{row}} </td>
+        </tr>
+        {%endfor%}
+
+    </table>
+</div>
+
+
+{%endblock%}

@@ -1,0 +1,168 @@
+<!--extend the base template-->
+{% extends "base.html"%}
+{% block title %}Welcome{% endblock %}
+{% block content %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css"/>
+    <style>
+       .col-md-6 {
+           border-collapse:separate;
+           border-spacing:10 15px;
+           height: 120px;
+           width: 120px;
+           float: left;
+
+       }
+       .col-md-2 {
+           border-collapse:separate;
+           border-spacing:10 15px;
+           height: 120px;
+           width: 120px;
+           float: left;
+     
+       }
+       .wrapper {
+            text-align: center;
+        }
+
+        .button {
+            background-color: rgb(116, 161, 106);  
+            color: black;  
+            top: 30%;
+        }
+    </style>
+</head>
+<body>
+<form method="POST">
+    <div>
+        <table class="table">
+            <tr class="table__header">
+            {% for header in heading %}
+            <th class = "table__cell">{{header}}</th>
+            {%endfor%}
+            </tr class="table__row">
+            {% for row in values %}
+                {% for cell in row %}
+                <td class = "table__cell">{{cell}} </td>
+                {%endfor%}
+            </tr>
+            {%endfor%}
+    
+        </table>
+    </div>
+
+    <div class="wrapper">
+    <div class="clearfix">
+        <div class = "row">
+            <div class = "col-md-6">
+                <label>
+                    Select departure airport
+                </label>
+                <select class = "selectpicker" name="departure_airport" data-live-search="true" id="departure_airport" class="form-control" title="Select departure airport">
+                    {% for row in airport_name%}
+                    <option value="{{row.airport_name}}">{{row.airport_name}}</option>
+                    {%endfor%}
+                </select>
+            </div>
+                <input id = "From" name = "From" class="form-control" type="text" placeholder="Select departure time">
+                <input id = "To" name = "To" class="form-control" type="text" placeholder="Select arrival time">
+
+          
+                
+
+       
+            
+        </div>
+        <div class = "row">
+            <div class = "col-md-6">
+                <label> 
+                    Select destination airport
+                </label>
+                <select class = "selectpicker" name="arrival_airport" data-live-search="true" id="arrival_airport" class="form-control" title="Select destination airport">
+                    {% for row in airport_name%}
+                    <option value="{{row.airport_name}}">{{row.airport_name}}</option>
+                    {%endfor%}
+                </select>
+            </div>
+        </div>
+        <div class = "row">
+            <div class ="col-md-6">
+                <label>
+                    Flight number
+                </label>
+                <input class = "form-group"  type = "text"  name="flight_num"  id="flight_num" class="form-control" title="Type flight number"/>
+            </div>
+        </div>
+        <div class = "row">
+            <div class ="col-md-6">
+                <label>
+                    Price
+                </label>
+                <input class = "form-group"  type = "text" name="price"  id="price" class="form-control" title="Type price"/>
+            </div>
+        </div>
+        <div class = "col-md-6">
+            <label> 
+                Select status
+            </label>
+            <select class = "selectpicker" name="status" data-live-search="true" id="status" class="form-control" title="Select status">
+                <option value= "In-Progress">In-progress</option>
+                <option value= "On-time">On-time</option>
+                <option value= "Delayed">Delayed</option>
+                <option value= "Cancelled">Cancelled</option>
+                <option value= "Finished">Finished</option>
+            </select>
+        </div>
+        <br/>
+        <button type="submit" class="button">Submit</button>
+        </div>
+        <div class = "row">
+            <div class ="col-md-6">
+                <label>
+                    Airplane ID
+                </label>
+                <input type = "text" class = "form=group" name="airplane_id" data-live-search="true" id="airplane_id" class="form-control" title="Type airplane ID"/>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        
+        config={
+            enableTime: true,
+            dateFormat: "Y-m-d H:i",
+        }
+
+        flatpickr("#From", {
+            enableTime: true,
+            dateFormat: "Y-m-d H:i",
+        });
+
+        flatpickr("#To", {
+            enableTime: true,
+            dateFormat: "Y-m-d H:i",
+        });
+
+        $(document).on("change", "#From", "#To" ,function () {
+                var From = $("#From").val();
+                var To = $("#To").val();
+                load_data("To", To);
+                load_data("From", From);
+            });
+         
+      
+          
+    </script>
+ 
+</body>
+
+
+{%endblock%}
+<!--overwrite with the second{}-->

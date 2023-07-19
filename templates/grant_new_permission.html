@@ -1,0 +1,69 @@
+<!--extend the base template-->
+{% extends "base.html"%}
+{% block title %}Grant Permission{% endblock %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css"/>
+    <style>
+       .col-md-6 {
+           border-collapse:separate;
+           border-spacing:10 15px;
+           height: 120px;
+           width: 120px;
+           float: left;
+
+       }
+       .col-md-2 {
+           border-collapse:separate;
+           border-spacing:10 15px;
+           height: 120px;
+           width: 120px;
+           float: left;
+     
+       }
+       .wrapper {
+            text-align: center;
+        }
+
+        .button {
+            background-color: rgb(116, 161, 106);  
+            color: black;  
+            top: 30%;
+        }
+    </style>
+</head>
+<body>
+<form method="POST">
+    <h3 allign = "center">Welcome</h3>
+    <div class="wrapper">
+    <div class="clearfix">
+        <div class = "row">
+            <div class ="col-md-6">
+                <label>
+                    Type user name
+                </label>
+                <input type = "text" class = "form=group" name="user_name" data-live-search="true" id="user_name" class="form-control" title="Type user name"/>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-6">
+                <label>
+                    Select permission type
+                </label>
+                <select class = "selectpicker" name="permission_type" data-live-search="true" id="permission_type" class="form-control" title="Select permission type">
+                    <option value= "Admin">admin</option>
+                    <option value= "Operator">operator</option>
+    
+                </select>
+            </div>
+        <button type="submit" class="button">Submit</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+
+</body>
+
+
+{%endblock%}

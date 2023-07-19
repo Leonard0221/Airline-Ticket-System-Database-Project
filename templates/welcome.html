@@ -1,0 +1,124 @@
+<!--extend the base template-->
+{% extends "base.html"%}
+{% block title %}SEARCH FLIGHT SITE{% endblock %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css"/>
+    <style>
+       .col-md-6 {
+           border-collapse:separate;
+           border-spacing:10 15px;
+           height: 120px;
+           width: 120px;
+           float: left;
+
+       }
+       .col-md-2 {
+           border-collapse:separate;
+           border-spacing:10 15px;
+           height: 120px;
+           width: 120px;
+           float: left;
+     
+       }
+       .wrapper {
+            text-align: center;
+        }
+
+        .button {
+            background-color: rgb(116, 161, 106);  
+            color: black;  
+            top: 30%;
+        }
+    </style>
+</head>
+<body>
+<form method="POST">
+    <h3 allign = "center">WELCOME</h3>
+    <div class="wrapper">
+    <div class="clearfix">
+        <div class = "row">
+            <div class ="col-md-6">
+                <label>
+                    Select source city
+                </label>
+                <select class = "selectpicker" name="source_city" data-live-search="true" id="source_city" class="form-control" title="Select source city">
+                    {% for row in airport_city%}
+                    <option value= "{{row.airport_city}}">{{row.airport_city}}</option>
+                    {%endfor%}
+                </select>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-6">
+                <label>
+                    Select source airport
+                </label>
+                <select class = "selectpicker" name="source_airport" data-live-search="true" id="source_airport" class="form-control" title="Select source airport">
+                    {% for row in airport_name%}
+                    <option value="{{row.airport_name}}">{{row.airport_name}}</option>
+                    {%endfor%}
+                </select>
+            </div>
+            <div class = "col-md-2">
+                <input class='datepicker' type="text" name="From" id="From" class="form-control" placeholder="From Date"/>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-6">
+                <label>
+                    Select destination city
+                </label>
+                <select class = "selectpicker" name="destination_city" data-live-search="true" id="destination_city" class="form-control" title="Select destination city">
+                    {% for row in airport_city%}
+                    <option value="{{row.airport_city}}">{{row.airport_city}}</option>
+                    {%endfor%}
+                </select>
+            </div>
+            <div class = "col-md-2">
+                <input class='datepicker' type="text" name="to" id="to" class="form-control" placeholder="To Date"/>
+            </div> 
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-6">
+                <label> 
+                    Select destination airport
+                </label>
+                <select class = "selectpicker" name="destination_airport" data-live-search="true" id="destination_airport" class="form-control" title="Select destination airport">
+                    {% for row in airport_name%}
+                    <option value="{{row.airport_name}}">{{row.airport_name}}</option>
+                    {%endfor%}
+                </select>
+            </div>
+        </div>
+        <div class = "row">
+            <div class ="col-md-6">
+                <label>
+                    Flight number
+                </label>
+                <input type = "text" class = "form=group" name="flight_num" data-live-search="true" id="flight_num" class="form-control" title="Type flight number"/>
+            </div>
+        <br/>
+        <button type="submit" class="button">Submit</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $(document).ready(function(){
+        $.datepicker.setDefaults({
+            dateFormat: 'yy-mm-dd'
+        });
+        $(function(){
+            $("#From").datepicker();
+            $("#to").datepicker();
+        });
+    });
+</script>
+</body>
+
+
+{%endblock%}
+<!--overwrite with the second{}-->

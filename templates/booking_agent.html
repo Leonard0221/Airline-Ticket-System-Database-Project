@@ -1,0 +1,40 @@
+<!--extend the base template-->
+{% extends "base.html"%}
+{% block title %}Home{% endblock %}
+{% block content %} 
+<head>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h2>
+            Welcome ID {{session['booking_agent_id']}}
+        </h2>
+</div>
+</head>
+<body>
+    <form method = "POST">
+        <div class = "row">
+            <div class = "col-md-6">
+                <button type="submit" name="submit" class="btn btn-secondary" style = "margin-top:20px" value ="view_my_flight">View My Flight</button>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-6">
+                <button type="submit" name="submit" class="btn btn-secondary" style = "margin-top:20px" value = "purchase_ticket">Purchase Ticket</button>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-6">
+                <button type="submit" name="submit" class="btn btn-secondary" style = "margin-top:20px" value = "view_my_commission">View My Commission</button>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-6">
+                <button type="submit" name="submit" class="btn btn-secondary" style = "margin-top:20px" value = "view_top_customers">View Top Customer</button>
+            </div>
+        </div>
+
+    </form>
+</body>
+
+{% endblock %}
+<!--overwrite with the second{}-->

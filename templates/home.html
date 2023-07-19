@@ -1,0 +1,23 @@
+<!--extend the base template-->
+{% extends "base.html"%}
+{% block title %}Home{% endblock %}
+{% block content %} 
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h2>
+            Welcome to Airline System!
+        </h2>
+        {%if session['email']%}
+        <p> You login as {{session['name']}}</p>
+        {%else%}
+        <p> Click "Log in" to start! </p>
+        {%endif%}
+        {%if data%}
+        <p> Supported Airlines: {{data}}</p>
+        {%endif%}
+
+    </div>
+</div>
+
+{% endblock %}
+<!--overwrite with the second{}-->

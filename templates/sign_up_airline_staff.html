@@ -1,0 +1,62 @@
+<!--extend the base template-->
+{% extends "base.html" %}
+{% block title %}Sign Up{% endblock %}
+{% block content %}
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-sm">
+      </div>
+      <div class="col-sm">
+        <form method="POST">
+          <h3 allign="center">Sign Up</h3>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="username" class="form-control" id="username" name="username" placeholder="Enter username"/>
+          </div>
+          <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter first name"/>
+          </div>
+          <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter last name"/>
+          </div>
+          <div class="form-group">
+            <label for="password1">Password</label>
+            <input type="password" class="form-control" id="password1" name="password1" placeholder="Enter password"/>
+          </div>
+          <div class="form-group">
+            <label for="password2">Confirm Password</label>
+            <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm password"/>
+          </div>
+          <div class="form-group">
+            <label for="airline_name">Airline Name</label>
+            <input type="text" class="form-control" id="airline_name" name="airline_name" placeholder="Airline Name"/>
+          </div>
+          <div class="form-group">
+            <label for="date_of_birth">Birthdate</label>
+            <input class='datepicker' type="text" name="date_of_birth" id="date_of_birth" class="form-control"
+                   placeholder="Birthdate"/>
+          </div>
+          <br/>
+          <button type="submit" class="btn btn-primary btn-block">Submit</button>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+          <script>
+              $(document).ready(function () {
+                  $.datepicker.setDefaults({
+                      dateFormat: 'yy-mm-dd'
+                  });
+                  $(function () {
+                      $("#date_of_birth").datepicker();
+                  });
+              });
+          </script>
+        </form>
+      </div>
+      <div class="col-sm">
+      </div>
+    </div>
+  </div>
+{% endblock %}
+<!--overwrite with the second{}-->

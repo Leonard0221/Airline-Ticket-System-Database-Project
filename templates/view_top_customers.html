@@ -1,0 +1,39 @@
+{%extends 'base.html' %}
+
+{%block content%}
+<br/>
+<div>
+    <table class="table">
+        <tr class="table__header">
+        {% for header in heading %}
+        <th class = "table__cell">{{header}}</th>
+        {%endfor%}
+        </tr class="table__row">
+        {% for row in email_list %}
+            <td class = "table__cell">{{row}} </td>
+        </tr>
+        {%endfor%}
+
+    </table>
+</div>
+<div>
+    <table class="table">
+        <tr class="table__header">
+        {% for header in heading2 %}
+        <th class = "table__cell">{{header}}</th>
+        {%endfor%}
+        </tr class="table__row">
+        {% for row in email_list_2 %}
+            <td class = "table__cell">{{row}} </td>
+        </tr>
+        {%endfor%}
+
+    </table>
+</div>
+<div>
+    <img src = {{bar_chart_2}} />
+    <img src = {{bar_chart}} />
+</div>
+
+
+{%endblock%}

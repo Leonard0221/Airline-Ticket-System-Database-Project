@@ -1,0 +1,105 @@
+<!--extend the base template-->
+{% extends "base.html" %}
+{% block title %}Sign Up{% endblock %}
+{% block content %}
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-sm">
+      </div>
+      <div class="col-sm">
+        <form method="POST">
+          <h3 allign="center">Sign Up</h3>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email"/>
+          </div>
+
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">verify ur email</label>
+            <div class="input-group">
+              <input type="text" class="form-control" aria-describedby="emailHelp" name="emailVerify">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit" name="submit" value="email_confirm">send
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="name">First Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter name"/>
+          </div>
+          <div class="form-group">
+            <label for="password1">Password</label>
+            <input type="password" class="form-control" id="password1" name="password1" placeholder="Enter password"/>
+          </div>
+          <div class="form-group">
+            <label for="password2">Confirm Password</label>
+            <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm password"/>
+          </div>
+          <div class="form-group">
+            <label for="building_number">Building Number</label>
+            <input type="text" class="form-control" id="building_number" name="building_number"
+                   placeholder="Building Number"/>
+          </div>
+          <div class="form-group">
+            <label for="street">Street</label>
+            <input type="text" class="form-control" id="street" name="street" placeholder="Street"/>
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" id="city" name="city" placeholder="City"/>
+          </div>
+          <div class="form-group">
+            <label for="state">State</label>
+            <input type="text" class="form-control" id="state" name="state" placeholder="State"/>
+          </div>
+          <div class="form-group">
+            <label for="phone_number">Phone Number</label>
+            <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Phone Number"/>
+          </div>
+          <div class="form-group">
+            <label for="passport_number">Passport Number</label>
+            <input type="text" class="form-control" id="passport_number" name="passport_number"
+                   placeholder="Passport Number"/>
+          </div>
+          <div class="form-group">
+            <label for="passport_expiration">Passport Expiration</label>
+            <input class='datepicker' type="text" name="passport_expiration" id="passport_expiration"
+                   class="form-control"
+                   placeholder="Passport Expiration"/>
+          </div>
+          <div class="form-group">
+            <label for="passport_country">Passport Country</label>
+            <input type="text" class="form-control" id="passport_country" name="passport_country"
+                   placeholder="Passport Country"/>
+          </div>
+          <div class="form-group">
+            <label for="birthdate">Birthdate</label>
+            <input class='datepicker' type="text" name="birthdate" id="birthdate" class="form-control"
+                   placeholder="Birthdate"/>
+          </div>
+          <br/>
+          <button type="submit" name="submit" class="btn btn-primary btn-block" value="submit_form">Submit</button>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+          <script>
+              $(document).ready(function () {
+                  $.datepicker.setDefaults({
+                      dateFormat: 'yy-mm-dd'
+                  });
+                  $(function () {
+                      $("#birthdate").datepicker();
+                      $("#passport_expiration").datepicker();
+                  });
+              });
+          </script>
+        </form>
+      </div>
+      <div class="col-sm">
+      </div>
+    </div>
+  </div>
+{% endblock %}
+<!--overwrite with the second{}-->

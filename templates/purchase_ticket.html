@@ -1,0 +1,41 @@
+{%extends 'base.html' %}
+
+{%block content%}
+<br/>
+<head>
+    <meta http-quiv="X-UA=Compatible" content = "ie=edge">
+</head>
+<div>
+    <form method = "POST">
+    <table class="table">
+        <tr class="table__header">
+        {% for header in heading %}
+        <th class = "table__cell">{{header}}</th>
+        {%endfor%}
+        <th class = "table__cell">Purchase_option</th>
+        </tr class="table__row">
+        {% for row in values %}
+            {% for cell in row %}
+            <td class = "table__cell">{{cell}} </td>
+            {%endfor%}
+            <td class = "table__cell">
+            <input type = "checkbox" name ="checkbox" id = "checkbox" value = "{{row}}"/>
+            </td>
+        </tr>
+        {%endfor%}
+        {% if session['booking_agent_id'] %}
+        <div class = "row">
+            <div class ="col-md-6">
+                <label>
+                    Customer Email
+                </label>
+                <input type = "text" class = "form=group" name="customer_email" data-live-search="true" id="customer_email" class="form-control" title="Type customer email"/>
+            </div>
+        </div>
+        {%endif%}
+    </table>
+    <input type ="submit"/>
+    </form>
+</div>
+
+{%endblock%}

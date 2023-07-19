@@ -1,0 +1,84 @@
+<!--extend the base template-->
+{% extends "base.html"%}
+{% block title %}Home{% endblock %}
+{% block content %} 
+<head>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h2>
+            Welcome Staff {{session['name']}}
+        </h2>
+</div>
+</head>
+<body>
+    <form method = "POST">
+        <div class = "row">
+            <div class = "col-md-6">
+                <button type="submit" name="submit" class="btn btn-secondary btn-block" style = "margin-top:20px ; margin-right: 200px" value ="view_my_flight">View My Flight</button>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-6">
+                <button type="submit" name="submit" class="btn btn-secondary btn-block" style = "margin-top:20px ; margin-right: 200px" value ="create_new_flight">Create New Flight</button>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-6">
+                <button type="submit" name="submit" class="btn btn-secondary btn-block" style = "margin-top:20px ; margin-right: 200px" value ="change_flight_status">Change Flight Status</button>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-6">
+                <button type="submit" name="submit" class="btn btn-secondary btn-block" style = "margin-top:20px ; margin-right: 200px" value ="add_airplane">Add airplane</button>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-6">
+                <button type="submit" name="submit" class="btn btn-secondary btn-block" style = "margin-top:20px ; margin-right: 200px" value ="add_airport">Add airport</button>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-6">
+                <button type="submit" name="submit" class="btn btn-secondary btn-block" style = "margin-top:20px ; margin-right: 200px" value ="top_booking_agent">Top 5 Booking Agent</button>
+            </div>
+        </div>
+
+        <div class = "row">
+            <div class = "col-md-6">
+                <button type="submit" name="submit" class="btn btn-secondary btn-block" style = "margin-top:20px ; margin-right: 200px" value ="view_frequent_customer">Most Frequent Customer</button>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-6">
+                <button type="submit" name="submit" class="btn btn-secondary btn-block" style = "margin-top:20px ; margin-right: 200px" value ="view_flight_of_customers">Flight of specific customer</button>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-6">
+                <button type="submit" name="submit" class="btn btn-secondary btn-block" style = "margin-top:20px ; margin-right: 200px" value ="view_report">View Report</button>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-6">
+                <button type="submit" name="submit" class="btn btn-secondary btn-block" style = "margin-top:20px ; margin-right: 200px" value ="comparison">View Comparison of Revenue Earned</button>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-6">
+                <button type="submit" name="submit" class="btn btn-secondary btn-block" style = "margin-top:20px ; margin-right: 200px" value ="view_top_destination">View Top Destination</button>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-6">
+                <button type="submit" name="submit" class="btn btn-secondary btn-block" style = "margin-top:20px ; margin-right: 200px" value ="grant_new_permission">Grant New Permission</button>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-6">
+                <button type="submit" name="submit" class="btn btn-secondary btn-block" style = "margin-top:20px ; margin-right: 200px" value ="add_booking_agent">Add Booking Agent</button>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}
+<!--overwrite with the second{}-->

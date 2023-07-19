@@ -1,0 +1,20 @@
+<!--extend the base template-->
+<!--can use python language in squiggly bracket -->
+{% extends "base.html"%}
+{% block title %}CHANGE FLIGHT STATUS{% endblock %}
+{% block content %} <form method="POST">
+    <h3 allign = "center">Login</h3>
+    <div class = "form-group">
+        <label for="flight_num">Flight Number</label>
+        <input type="text" class="form-control" id="flight_num" name="flight_num" placeholder="Enter flight number"/>
+    </div>
+    <div class = "form-group">
+        <label for="flight_status">Flight Status</label>
+        <input type="text" class="form-control" id="flight_status" name="flight_status" placeholder="Enter flight status"/>
+    </div>
+    <br/>
+    <button type="submit" class="btn btn-primary">Change</button>
+</form>
+
+{% endblock %}
+<!--overwrite with the second{}-->

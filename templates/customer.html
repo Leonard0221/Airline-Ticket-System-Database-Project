@@ -1,0 +1,54 @@
+<!--extend the base template-->
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+  <head>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2>
+          Welcome {{ session['name'] }}
+        </h2>
+      </div>
+    </div>
+  </head>
+  <body>
+  <form method="POST">
+    <div class="row">
+      <div class="col-md-6">
+        <button type="submit" name="submit" id="btn1" class="btn btn-secondary btn-block" style = "margin-top:20px" value="view_my_flight">View My Flight</button>
+        <style>
+            #btn1 {
+                text-align: left;
+                width: 150px;
+                height: 50px;
+            }</style>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <button type="submit" name="submit" id="btn2" class="btn btn-secondary btn-block" style = "margin-top:20px" value="purchase_ticket">Purchase Ticket</button>
+        <style>
+            #btn2 {
+                text-align: left;
+                width: 150px;
+                height: 50px;
+            }</style>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <button type="submit" name="submit" id="btn3" class="btn btn-secondary btn-block" style = "margin-top:20px" value="track_spending">Track Spending</button>
+        <style>
+            #btn3 {
+                text-align: left;
+                width: 150px;
+                height: 50px;
+            }</style>
+      </div>
+    </div>
+
+  </form>
+  </body>
+
+{% endblock %}
+<!--overwrite with the second{}-->
