@@ -1,5 +1,4 @@
-# Spring 2022 NYUSH Database Final Project
-## Project description
+# Project description
 
 This project is mysql / flask project on airline ticket reservation system.\
 This project runs perfectly on demo, meeting all the requirements of the projects details.
@@ -24,8 +23,4 @@ Some notes:
 * Set phone number length longer > 20;
 * Need to change the password default length to 256;
 2. It is very easy to run this project. Just click the main.py and run the module.
-
-## Team Members:
-* Leonard Shi (bs4297)
-* Peiyang Wu (pw2179)
 
