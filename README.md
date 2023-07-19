@@ -1,4 +1,5 @@
-# Project description
+# Airline Ticket Reservation System
+## Project Description
 
 This project is mysql / flask project on airline ticket reservation system.\
 This project runs perfectly on demo, meeting all the requirements of the projects details.
